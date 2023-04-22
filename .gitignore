@@ -1,0 +1,15 @@
+# Directories
+node_modules/
+public/uploads/
+logs/
+dist/
+coverage/
+tmp/
+temp/
+# IDEs
+.idea/
+.vscode/
+# OS
+.DS_Store
+Thumbs.db
+# Logs

@@ -74,10 +74,14 @@ router.post('/login',passport.authenticate('local', {
 }), function(req, res){});
 
 //LOGOUT
-router.get('/logout', function(req, res){
-    req.logout();
+router.get('/logout', (req, res)=>{
+    req.logout((err)=>
+    {  // do this
+        if (err) { return next(err); }// do this
+        res.redirect('/');
+      });
     req.flash('success', 'Logged you out successfully')
-    res.redirect('/')
+    // res.redirect('/')
 });
 
 

@@ -17,7 +17,7 @@ router.get('/dashboard', isLoggedIn, function(req, res){
             } else {
                 res.render('adminDashboard', {title: 'Transactions | ', fund: data})
             }
-        })
+        }).maxTimeMS(30000)
     } else {
         res.render('dashboard', {title: 'Dashboard | '})
     }
@@ -25,11 +25,11 @@ router.get('/dashboard', isLoggedIn, function(req, res){
 
 router.get('/dashboard/adminOperation/:id', isLoggedIn, function(req, res){
     if(req.user.username === 'admin'){
-        addFund.findById(req.params.id, function(err, foundFund){
+        addFund.findById(req.params.id, (err, foundFund)=>{
             if(err){
                 res.render('adminDashboard')
             }else {
-                res.render('showFundAdmin', {fund: foundFund, title: 'showFund'})
+                res.render('showFundAdmin', { title: 'showFund | ', fund: foundFund})
             }
         })
     } else {

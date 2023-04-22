@@ -7,15 +7,25 @@ const User = require('./models/user');
 const bodyParser = require('body-parser');
 const localStrategy = require('passport-local');
 const passportLocalMongoose = require('passport-local-mongoose');
+const {MongoClient} = require('mongodb');
 
+const uri = 'mongodb+srv://olanipekunoladapo:micheal@cluster0.lqhatn5.mongodb.net/?retryWrites=true&w=majority'
+mongoose.connect(uri,{ useNewUrlParser: true , useCreateIndex: true });
 
 //requiring routes
 const indexRoutes = require('./routes/index');
 const userWorksRoutes = require('./routes/usersWork');
 const authRoutes = require('./routes/auth')
-
-mongoose.connect('mongodb://eugene-anderson:08028345728@cluster0-shard-00-00.v54ln.mongodb.net:27017,cluster0-shard-00-01.v54ln.mongodb.net:27017,cluster0-shard-00-02.v54ln.mongodb.net:27017/coinProw?ssl=true&replicaSet=atlas-nm5eet-shard-0&authSource=admin&retryWrites=true&w=majority');
-// mongoose.connect('mongodb://localhost/coinPay');
+// getDb: () => dbconnection
+// var uri = 'mongodb+srv://mannydaytona:brodaemmacrypto@cluster0.najhx0e.mongodb.net/?retryWrites=true&w=majority'
+// MongoClient.connect(uri, function(err, client) {
+//   const collection = client.db("test").collection("devices");
+//   // perform actions on the collection object
+//   client.close();
+// });
+// // mongodb+srv://<username>:<password>@cluster0.najhx0e.mongodb.net/?retryWrites=true&w=majority
+// // mongoose.connect(uri',{ useNewUrlParser: true });
+// // mongoose.connect('mongodb://localhost/coinPay');
 
 const app = express();
 
@@ -27,7 +37,7 @@ const app = express();
 
 //PASSPORT CONFIGURATION
 app.use(require('express-session')({
-    secret: 'coinpay is the best cryptotrader',
+    secret: 'mannyislordraziel',
     resave: false,
     saveUninitialized: false
 }));
@@ -41,7 +51,7 @@ passport.deserializeUser(User.deserializeUser());
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(function(req, res, next){
+app.use((req, res, next)=>{
     res.locals.currentUser = req.user;
     res.locals.error = req.flash('error');
     res.locals.success = req.flash('success');
@@ -58,14 +68,14 @@ app.use(authRoutes);
 app.use(indexRoutes);
 app.use(userWorksRoutes);
 
-app.get('dashboard/*', function(req, res){
+app.get('dashboard/*', (req, res)=>{
     res.render('dashboard404', {title: 'Dash 404 Page not found | '})
 });
-app.get('*', function(req, res){
+app.get('*', (req, res)=>{
     res.render('404', {title: '404 Page not found | '})
 });
 
-function isLoggedIn(req, res, next){
+const isLoggedIn=(req, res, next)=>{
     if(req.isAuthenticated()){
         return next();
     };
@@ -73,9 +83,9 @@ function isLoggedIn(req, res, next){
     res.redirect('/login');
 };
 
-
-app.listen(process.env.PORT || 3500, function(){
-    console.log('Server has started');
+const PORT = process.env.PORT || 3500
+app.listen(PORT, ()=>{
+    console.log(`Server has started on ${PORT}`)
 });
 
 
