@@ -7,13 +7,13 @@
   padding: 10px 30px;
   border-radius: 50px;
   transition: 0.5s;
-  color: #3498db;
-  border: 2px solid #3498db;
+  color: #FFBB11;
+  border: 2px solid #FFBB11;
   margin-top: 35px;
 }
 
 .general-btn:hover {
-  background: #3498db;
+  background: #FFBB11;
   color: #fff;
 }
 

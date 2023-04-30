@@ -45,13 +45,17 @@ body {color : black;}
                         <%= fund.amount %> <%= fund.crypto %>
                       </div>
                     </div>
-                    <form action="/dashboard/operation/<%=fund._id%>?_method=DELETE" method="POST"><center><button class="general-btn">Cancel</button></center></form>
-                    <form action="/dashboard/adminOperation/:id?_method=PUT"><center><button class="general-btn">Confirm</button></center></form>
+                    <form action="/dashboard/operation/<%=fund._id%>?_method=DELETE" method="POST">
+                      <center><button class="general-btn">Cancel</button></center>
+                    </form>
+                    <form action="/dashboard/adminOperation/<%=fund.id%>?_method=PUT" method="POST" id="putForm">
+                      <center><button type="submit" class="general-btn">Confirm</button></center>
+                    </form>
                   </center>
             </div>
             <!-- /.container-fluid -->
 
         </div>
-        
+    
         <!-- End of Main Content -->
 <%- include("./partials/footerDashboard.ejs") %>

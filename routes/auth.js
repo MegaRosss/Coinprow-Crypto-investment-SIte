@@ -10,9 +10,9 @@ router.get('/register', function(req, res){
     res.render('register', {title: 'Register | '})
 })
 
-let usdtAddress = "lladoqid21ewd98123io2esq12919123243"
-let busdAddress = "lladoqid21ewd98123io2esq12919123243"
-let usdcAddress = "lladoqid21ewd98123io2esq12919123243"
+let usdtAddress = "input your usdt wallet address"
+let busdAddress = "input your busd wallet address"
+let usdcAddress = "input your usdc wallet address"
 let accBalance= 0.0000;
 let usdcDetails = {
         addedAmount: 0.0000,

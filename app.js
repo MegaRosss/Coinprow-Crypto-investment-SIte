@@ -8,24 +8,16 @@ const bodyParser = require('body-parser');
 const localStrategy = require('passport-local');
 const passportLocalMongoose = require('passport-local-mongoose');
 const {MongoClient} = require('mongodb');
-
-const uri = 'mongodb+srv://olanipekunoladapo:micheal@cluster0.lqhatn5.mongodb.net/?retryWrites=true&w=majority'
-mongoose.connect(uri,{ useNewUrlParser: true , useCreateIndex: true });
+const dotenv = require('dotenv')
+dotenv.config()
+const MONOGO_URL = process.env.MONOGO_URL
+// const uri = MONOGO_URL
+mongoose.connect(MONOGO_URL ,{ useNewUrlParser: true , useCreateIndex: true });
 
 //requiring routes
 const indexRoutes = require('./routes/index');
 const userWorksRoutes = require('./routes/usersWork');
 const authRoutes = require('./routes/auth')
-// getDb: () => dbconnection
-// var uri = 'mongodb+srv://mannydaytona:brodaemmacrypto@cluster0.najhx0e.mongodb.net/?retryWrites=true&w=majority'
-// MongoClient.connect(uri, function(err, client) {
-//   const collection = client.db("test").collection("devices");
-//   // perform actions on the collection object
-//   client.close();
-// });
-// // mongodb+srv://<username>:<password>@cluster0.najhx0e.mongodb.net/?retryWrites=true&w=majority
-// // mongoose.connect(uri',{ useNewUrlParser: true });
-// // mongoose.connect('mongodb://localhost/coinPay');
 
 const app = express();
 

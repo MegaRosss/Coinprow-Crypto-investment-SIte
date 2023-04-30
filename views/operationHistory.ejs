@@ -27,16 +27,7 @@
                                             <th>Status</th>
                                         </tr>
                                     </thead>
-                                    <!-- <tfoot>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                        </tr>
-                                    </tfoot> -->
+                                    
                                     <script> 
                                         let pt = document.getElementById('pTrans');
                                         let tbody = document.getElementById('firstR')
@@ -48,7 +39,10 @@
                                     </script>
                                     
 
-                                    <% fund.forEach(function(data){ %><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+                    <%function filterSucess(data){ return data.filter(obj => obj.status !== 'success')}
+                                  const filteredData =  filterSucess(fund)
+                                    filteredData.forEach((data)=>{
+                                        %><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
                                     <tbody>
                                         
                                         

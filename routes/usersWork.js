@@ -38,18 +38,31 @@ router.get('/dashboard/adminOperation/:id', isLoggedIn, function(req, res){
 });
 
 router.put('/dashboard/adminOperation/:id', isLoggedIn, function(req, res){
-    if(req.user.username === 'admin'){
-        addFund.findById(req.params.id, function(err, foundFund){
-            if(err){
-                res.render('adminDashboard')
-            }else {
-                res.send('hello');
-                // res.render('showFundAdmin', {fund: foundFund, title: 'showFund'})
+        if(req.user.username === 'admin'){
+            let status = 'sucess'
+            
+             
+            
+            
+
+                addFund.findByIdAndUpdate(req.params.id, { status: status} , function(err, data){
+                    if(err){
+                        res.send(err)
+                    }else {
+                        // res.send('hello');
+                        
+                            // foundFund.status = req.body.status;
+                           
+                            res.render('showFundAdmin', {fund: data , title: 'showFund ||'})
+                            
+                    
+                        // res.render('showFundAdmin', { title: 'showFund |'})
+                    }
+                })
+            } 
+        else {
+                res.render('dashboard', {title: 'Dashboard | '})
             }
-        })
-    } else {
-        res.render('dashboard', {title: 'Dashboard | '})
-    }
 })
 
 router.get('/dashboard/addfunds', isLoggedIn, function(req, res){
@@ -115,7 +128,7 @@ router.post('/dashboard/addfunds', isLoggedIn, function(req, res){
     console.log(crypto)
     if (crypto == 'Btc'){
         var coinName = "Bitcoin";
-        console.log('usdc is it');
+        console.log('bitcoin is it');
         
     } else if (crypto == 'Usdc'){
         var coinName = "Usd Coin";
@@ -233,7 +246,9 @@ router.put('/dashboard/paymentdetails/:id', isLoggedIn, function(req, res){
 });
 
 //ADD FUNDS TO WALLET
-
+// router.put('/dashboard/adminOperation/:id', isLoggedIn, function(req, res){
+//    
+// });
 
 
 function isLoggedIn(req, res, next){

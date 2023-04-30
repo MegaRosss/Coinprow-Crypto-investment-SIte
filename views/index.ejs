@@ -1,5 +1,10 @@
 <%- include("./partials/headerIndex.ejs") %>
-
+<style>
+  .heroAnim{
+    margin-left: 6rem;
+margin-top: -6rem;
+  }
+</style>
       <div class="row">
         <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
           <h1 data-aos="fade-up">Invest with confidence on the world's leading social investment platform</h1>
@@ -9,7 +14,11 @@
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
-          <img src="/img/hero-img.png" class="img-fluid animated" alt="">
+          
+         
+          <lottie-player class="heroAnim" src="https://assets10.lottiefiles.com/private_files/lf30_gonpfxdh.json"  background="transparent"  speed="1"  style="width: 500px; height: 500px;"  loop  autoplay></lottie-player>
+          
+
         </div>
       </div>
     </div>
@@ -38,33 +47,15 @@
           <div class="col-lg-2 col-md-4 col-6">
             <img class="reduceImg" src="/img2/usdt.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="200">
           </div>
-          <!-- <div class="col-lg-2 col-md-4 col-6">
-            <img class="reduceImg" src="/img2/busd.png" class="img-fluid" alt="" data-aos="zoom-in">
-          </div> -->
+          
           <div class="col-lg-2 col-md-4 col-6">
             <img class="reduceImg" src="/img2/btcc.png" class="img-fluid" alt="" data-aos="zoom-in">
           </div>
-          <!-- <div class="col-lg-2 col-md-4 col-6">
-            <img class="reduceImg" src="/img2/usdc.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="100">
-          </div> -->
+          
           <div class="col-lg-2 col-md-4 col-6">
             <img class="reduceImg" src="/img2/busd.png" class="img-fluid" alt="" data-aos="zoom-in">
           </div>
-          <!-- <div class="col-lg-2 col-md-4 col-6">
-            <img class="reduceImg" src="/img2/usdt.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="200">
-          </div> -->
           
-          <!-- <div class="col-lg-2 col-md-4 col-6">
-            <img src="/img/clients/br4.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="300">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6">
-            <img src="/img/clients/br5.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="400">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6">
-            <img src="/img/clients/br6.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="500">
-          </div> -->
 
         </div>
 
@@ -102,7 +93,7 @@
 
         <div class="row">
           <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-xl-start" data-aos="fade-right" data-aos-delay="150">
-            <img src="/img/info-business.svg" alt="" class="img-fluid">
+            <img src="/img/replace.jpg" alt="" class="img-fluid">
           </div>
 
           <div class="col-xl-7 d-flex align-items-stretch pt-4 pt-xl-0" data-aos="fade-left" data-aos-delay="300">
@@ -161,8 +152,7 @@
                 <li>For 5 days</li>
                 <br>
                 <br>
-                <!-- <li class="na">For 25 days</li>
-                <li class="na">Massa ultricies mi</li> -->
+                
               </ul>
               <div class="btn-wrap">
                 <a href="../../dashboard/addfunds" class="btn-buy">Invest</a>
@@ -233,8 +223,7 @@
               <div class="social-links">
                 <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
                 <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
-                <!-- <a href="#" class="instagram"><i class="icofont-instagram"></i></a> -->
-                <!-- <a href="#" class="linkedin"><i class="icofont-linkedin"></i></a> -->
+               
               </div>
             </div>
           </div>
@@ -292,5 +281,5 @@
     </section><!-- End Contact Section -->
 
   </main><!-- End #main -->
-
-  <%- include("./partials/footer.ejs")%>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <%- include("./partials/footer.ejs")%>
