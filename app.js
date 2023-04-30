@@ -12,7 +12,7 @@ const dotenv = require('dotenv')
 dotenv.config()
 const MONOGO_URL = process.env.MONOGO_URL
 // const uri = MONOGO_URL
-mongoose.connect(MONOGO_URL ,{ useNewUrlParser: true , useCreateIndex: true });
+mongoose.connect('mongodb+srv://olanipekunoladapo:micheal@cluster0.lqhatn5.mongodb.net/?retryWrites=true&w=majority' ,{ useNewUrlParser: true , useCreateIndex: true });
 
 //requiring routes
 const indexRoutes = require('./routes/index');
