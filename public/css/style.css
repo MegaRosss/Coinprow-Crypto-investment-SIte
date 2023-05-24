@@ -478,11 +478,11 @@ body.active { overflow: hidden; }
 
 .trend-tab .tab-content {
   display: grid;
-  gap: 20px;
+  gap: 10px;
 }
 
 .trend-card {
-  padding: 20px;
+  padding: 30px;
   border-radius: var(--radius-12);
   transition: var(--transition-1);
 }
@@ -1324,6 +1324,14 @@ h1, h2, h3, h4, h5, h6 {
   }
   #header .logo h1 {
     font-size: 28px;
+  }
+
+  .mobile_svg{
+    max-width: 380px;
+  }
+  .mobile_icon{
+    max-width: 100px;
+
   }
 }
 

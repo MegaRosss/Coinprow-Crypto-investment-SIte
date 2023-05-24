@@ -12,8 +12,17 @@ const dotenv = require('dotenv')
 dotenv.config()
 const MONOGO_URL = process.env.MONOGO_URL
 // const uri = MONOGO_URL
-mongoose.connect('mongodb+srv://olanipekunoladapo:micheal@cluster0.lqhatn5.mongodb.net/?retryWrites=true&w=majority' ,{ useNewUrlParser: true , useCreateIndex: true });
-
+mongoose
+  .connect('mongodb+srv://olanipekunoladapo:micheal@cluster0.lqhatn5.mongodb.net/?retryWrites=true&w=majority', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log('Connected to MongoDB');
+  })
+  .catch((error) => {
+    console.log('Error connecting to MongoDB:', error.message);
+  });
 //requiring routes
 const indexRoutes = require('./routes/index');
 const userWorksRoutes = require('./routes/usersWork');
@@ -34,6 +43,12 @@ app.use(require('express-session')({
     saveUninitialized: false
 }));
 
+// Set up error handling middleware
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Oops! Something went wrong.');
+  });
+  
 //FLASH SETUP
 app.use(flash());
 

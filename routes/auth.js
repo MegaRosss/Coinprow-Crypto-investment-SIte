@@ -84,5 +84,29 @@ router.get('/logout', (req, res)=>{
     // res.redirect('/')
 });
 
+//RESET ROUTE
+//Show reser form
+router.get('/resetpassword', function(req, res){
+    res.render('forgotpassword', {title: 'password reset | '})
+});
+
+//login logics
+router.post('/login',passport.authenticate('local', {
+    successRedirect: '/dashboard',
+    failureRedirect: '/login'
+}), function(req, res){});
+
+//LOGOUT
+router.get('/logout', (req, res)=>{
+    req.logout((err)=>
+    {  // do this
+        if (err) { return next(err); }// do this
+        res.redirect('/');
+      });
+    req.flash('success', 'Logged you out successfully')
+    // res.redirect('/')
+});
+
+
 
 module.exports = router;
