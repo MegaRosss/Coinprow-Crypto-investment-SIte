@@ -196,7 +196,10 @@ body.active { overflow: hidden; }
   #REUSED STYLE
 \*-----------------------------------*/
 
-.container { padding-inline: 15px; }
+.container { 
+  
+  padding: 2rem 15px;
+ }
 
 .btn {
   color: var(--white);
@@ -360,12 +363,21 @@ body.active { overflow: hidden; }
 }
 
 .logo {
-  color: var(--white);
   font-size: 2.5rem;
   font-weight: var(--fw-700);
   display: flex;
   align-items: center;
   gap: 5px;
+}
+.logo > h1 >a{
+  color: var(--maximum-yellow-red);
+
+  font-size: 32px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .nav-toggle-btn .line {
@@ -453,7 +465,7 @@ body.active { overflow: hidden; }
   border: 1px solid var(--white_50);
   border-radius: var(--radius-24);
   padding: 20px;
-  box-shadow: var(--shadow-2);
+  /* box-shadow: var(--shadow-1); */
   margin-block-start: -160px;
 }
 
@@ -1308,7 +1320,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header .logo h1 a, #header .logo h1 a:hover {
-  color: #222222;
   text-decoration: none;
 }
 

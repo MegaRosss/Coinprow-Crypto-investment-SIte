@@ -1,84 +1,197 @@
 <%- include("./partials/headerDashboard.ejs") %>
+<style>
+  .grid{
+    width: 100%;
+/* padding-inline: .75rem; */
+/* margin-inline: 2em; */
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+gap: .5em;
+  }
+.currencycard{
+    display: flex;
+    flex-direction: column;
+    width: 410px;
+    aspect-ratio: 2/1;
+    margin-block: 2rem;
+    justify-content: center;
+    background-image: url(.././public/assets/cool-background.png);
+    gap: 1em;
+    align-items: center;
+    position: relative;
+    border-radius: 10px;
+    border: 1px solid #e3e6f0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.currencycard > *{
+    display: flex;
+    gap: 3rem;
+    width: max-content;
 
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
+ 
+}
+.uppcol >p > span{
+ margin-top: .5em;
+ color: black;
+ font-size: 18px;
+}
+.uppcol,
+.lowcol{
+width: 100%;
+padding-inline: 1em;
+}
+ .imgbx{
+   position: absolute;
+   top: 1em;right: 2rem;
 
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800"><b>Dasboard</b></h1>
+ 
+}
+  .addbtn{
+   position: absolute;
+   bottom: 1em;
+   right: 2rem;
+   background-color: #fff;
+   /* width: 100px;
+   aspect-ratio: 2/1; */
+   padding: 1em;
+   border-radius: 1em;
+   font-size: 16px;
+display: inline-block;
+padding: 10px 30px;
+transition: 0.5s all;
+color: #ffbb11;
+border: 1px solid #FFBB11;
 
-                    <div class="row">
+}
+a:hover{
+    text-decoration: none;
+}
+.addbtn:hover{
+    background-color: #FFBB11;
+    color: white;
+    border: 1px solid #ffbb11;
 
-                        <!-- Border Left Utilities -->
 
-                        <!-- Border Bottom Utilities -->
-                        <div class="col-lg-4">
+}
+ 
+@media (max-width : 575px) {
+    .grid{
 
-                            <div class="card mb-4 py-3 border-bottom-success">
-                                <div class="card-body">
-                                    <h3><b>BTC</b>&nbsp;&nbsp;<img style="width: 50px;" src="/img2/btcc.png" alt="Usdt"></h3> 
-                                    <p style="padding-top: 15px;"><span style="text-align: left; float: left; width: 50%;">ADDED</span>  <span style="text-align: right;  float: left; width: 50%;">0.0000</span></p>
-                                    <p style="padding-top: 15px;"><span style="text-align: left; float: left; width: 50%;">DEPOSITED</span>  <span style="text-align: right;  float: left; width: 50%;">0.0000</span></p>
-                                    <p style="padding-top: 15px;"><span style="text-align: left; float: left; width: 50%;">ACCRUED</span>  <span style="text-align: right;  float: left; width: 50%;">0.0000</span></p>
-                                    <p style="padding-top: 15px;"><span style="text-align: left; float: left; width: 50%;">REFERRAL</span>  <span style="text-align: right;  float: left; width: 50%;">0.0000</span></p>
-                                    <p style="padding-top: 15px;"><span style="text-align: left; float: left; width: 50%;">WITHDRAWAL</span>  <span style="text-align: right;  float: left; width: 50%;">0.0000</span></p>
-                                    <p style="padding-top: 35px;"><span style="text-align: left; float: left; width: 50%;">AVAILABLE</span>  <span style="text-align: right;  float: left; width: 50%;">0.0000</span></p>
-                                    <p style="padding-top: 15px;"><span style="text-align: left; float: left; width: 50%;">PENDING</span>  <span style="text-align: right;  float: left; width: 50%;">0.0000</span></p>
-                                    <a href="../../dashboard/addfunds"><center><button class="general-btn">Add Funds</button></center></a>
-                                </div>
+grid-template-columns: 1fr;
+gap: 2em;
+  }
+  .currencycard{
+  
+    width: 310px;
+  
+
+}
+.addbtn{
+font-size: 14px;
+
+padding: 5px 20px;
+
+}
+}
+
+@media (min-width: 992px) {
+
+}
+@media (min-width: 1200px) {
+
+}
+
+</style>
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    
+    <!-- Page Heading -->
+    <h1 class="h3 mb-4 text-gray-800"><b>Dasboard</b></h1>
+    
+    <div class="grid">
+
+        <div class="currencycard">
+            <div class="uppcol">
+                            <p> Bitcoin Balance: <br> <span>$----</span></p>
+                            <div class="imgbx">
+                                <img style="width: 50px;" src="/img2/btcc.png" alt="Bitcoin logo">
                             </div>
-
                         </div>
-                        <div class="col-lg-4">
-
-                            <div class="card mb-4 py-3 border-bottom-success">
-                                <div class="card-body">
-                                    <h3><b>USDT</b>&nbsp;&nbsp;<img style="width: 50px;" src="/img2/usdt.png" alt="Usdt"></h3> 
-                                    <p style="padding-top: 15px;"><span style="text-align: left; float: left; width: 50%;">ADDED</span>  <span style="text-align: right;  float: left; width: 50%;">0.0000</span></p>
-                                    <p style="padding-top: 15px;"><span style="text-align: left; float: left; width: 50%;">DEPOSITED</span>  <span style="text-align: right;  float: left; width: 50%;">0.0000</span></p>
-                                    <p style="padding-top: 15px;"><span style="text-align: left; float: left; width: 50%;">ACCRUED</span>  <span style="text-align: right;  float: left; width: 50%;">0.0000</span></p>
-                                    <p style="padding-top: 15px;"><span style="text-align: left; float: left; width: 50%;">REFERRAL</span>  <span style="text-align: right;  float: left; width: 50%;">0.0000</span></p>
-                                    <p style="padding-top: 15px;"><span style="text-align: left; float: left; width: 50%;">WITHDRAWAL</span>  <span style="text-align: right;  float: left; width: 50%;">0.0000</span></p>
-                                    <p style="padding-top: 35px;"><span style="text-align: left; float: left; width: 50%;">AVAILABLE</span>  <span style="text-align: right;  float: left; width: 50%;">0.0000</span></p>
-                                    <p style="padding-top: 15px;"><span style="text-align: left; float: left; width: 50%;">PENDING</span>  <span style="text-align: right;  float: left; width: 50%;">0.0000</span></p>
-                                    <a href="../../dashboard/addfunds"><center><button class="general-btn">Add Funds</button></center></a>
-                                </div>
+                        <div class="lowcol">
+                            <div class="textbx">
+                                <p> Intrest: <span>$----</span></p>
+                                <p> Deposit: <span>$----</span></p>
                             </div>
-
-                        </div>
-                        <div class="col-lg-4">
-
-                            <div class="card mb-4 py-3 border-bottom-warning">
-                                <div class="card-body">
-                                    <h3><b>BUSD</b>&nbsp;&nbsp;<img style="width: 50px;" src="/img2/busd.png" alt="Bitcoin"></h3> 
-                                    <p style="padding-top: 15px;"><span style="text-align: left; float: left; width: 50%;">ADDED</span>  <span style="text-align: right;  float: left; width: 50%;">0.0000</span></p>
-                                    <p style="padding-top: 15px;"><span style="text-align: left; float: left; width: 50%;">DEPOSITED</span>  <span style="text-align: right;  float: left; width: 50%;">0.0000</span></p>
-                                    <p style="padding-top: 15px;"><span style="text-align: left; float: left; width: 50%;">ACCRUED</span>  <span style="text-align: right;  float: left; width: 50%;">0.0000</span></p>
-                                    <p style="padding-top: 15px;"><span style="text-align: left; float: left; width: 50%;">REFERRAL</span>  <span style="text-align: right;  float: left; width: 50%;">0.0000</span></p>
-                                    <p style="padding-top: 15px;"><span style="text-align: left; float: left; width: 50%;">WITHDRAWAL</span>  <span style="text-align: right;  float: left; width: 50%;">0.0000</span></p>
-                                    <p style="padding-top: 35px;"><span style="text-align: left; float: left; width: 50%;">AVAILABLE</span>  <span style="text-align: right;  float: left; width: 50%;">0.0000</span></p>
-                                    <p style="padding-top: 15px;"><span style="text-align: left; float: left; width: 50%;">PENDING</span>  <span style="text-align: right;  float: left; width: 50%;">0.0000</span></p>
-                                    <a href="../../dashboard/addfunds"><center><button class="general-btn">Add Funds</button></center></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-
-                            <div class="card mb-4 py-3 border-bottom-info">
-                                <div class="card-body">
-                                    <h3><b>USDC</b>&nbsp;&nbsp;<img style="width: 50px;" src="/img2/usdc.png" alt="Perfect Money"></h3>
-                                    <p style="padding-top: 15px;"><span style="text-align: left; float: left; width: 50%;">ADDED</span>  <span style="text-align: right;  float: left; width: 50%;">0.0000</span></p>
-                                    <p style="padding-top: 15px;"><span style="text-align: left; float: left; width: 50%;">DEPOSITED</span>  <span style="text-align: right;  float: left; width: 50%;">0.0000</span></p>
-                                    <p style="padding-top: 15px;"><span style="text-align: left; float: left; width: 50%;">ACCRUED</span>  <span style="text-align: right;  float: left; width: 50%;">0.0000</span></p>
-                                    <p style="padding-top: 15px;"><span style="text-align: left; float: left; width: 50%;">REFERRAL</span>  <span style="text-align: right;  float: left; width: 50%;">0.0000</span></p>
-                                    <p style="padding-top: 15px;"><span style="text-align: left; float: left; width: 50%;">WITHDRAWAL</span>  <span style="text-align: right;  float: left; width: 50%;">0.0000</span></p>
-                                    <p style="padding-top: 35px;"><span style="text-align: left; float: left; width: 50%;">AVAILABLE</span>  <span style="text-align: right;  float: left; width: 50%;">0.0000</span></p>
-                                    <p style="padding-top: 15px;"><span style="text-align: left; float: left; width: 50%;">PENDING</span>  <span style="text-align: right;  float: left; width: 50%;">0.0000</span></p>
-                                    <a href="../../dashboard/addfunds"><center><button class="general-btn">Add Funds</button></center></a>
-                                </div>
-                            </div>
+                        <a href="../../dashboard/addfunds" class="addbtn">Add Funds</a>
                         </div>
 
                     </div>
+                    <div class="currencycard">
+                        <div class="uppcol">
+                            <p> Bitcoin Balance: <span>$----</span></p>
+                            <div class="imgbx">
+                                <img style="width: 50px;" src="/img2/usdt.png" alt="Usdt">                
+                            </div>
+                        </div>
+                        <div class="lowcol">
+                            <div class="textbx">
+                                <p> Intrest: <span>$----</span></p>
+                                <p> Deposit: <span>$----</span></p>
+                            </div>
+                        <a href="../../dashboard/addfunds" class="addbtn">Add Funds</a>
+                        </div>
+
+                    </div>
+                    <div class="currencycard">
+                        <div class="uppcol">
+                            <p> Bitcoin Balance: <span>$----</span></p>
+                            <div class="imgbx">
+                                <img style="width: 50px;" src="/img2/usdc.png" alt="Bitcoin logo">
+                            </div>
+                        </div>
+                        <div class="lowcol">
+                            <div class="textbx">
+                                <p> Intrest: <span>$----</span></p>
+                                <p> Deposit: <span>$----</span></p>
+                            </div>
+                        <a href="../../dashboard/addfunds" class="addbtn">Add Funds</a>
+                        </div>
+
+                    </div>
+                    <div class="currencycard">
+                        <div class="uppcol">
+                            <p> Bitcoin Balance: <span>$----</span></p>
+                            <div class="imgbx">
+                                <img style="width: 50px;" src="/img2/usdt.png" alt="Bitcoin logo">
+                            </div>
+                        </div>
+                        <div class="lowcol">
+                            <div class="textbx">
+                                <p> Intrest: <span>$----</span></p>
+                                <p> Deposit: <span>$----</span></p>
+                            </div>
+                        <a href="../../dashboard/addfunds" class="addbtn">Add Funds</a>
+                        </div>
+
+                    </div>
+                    <div class="currencycard">
+                        <div class="uppcol">
+                            <p> Bitcoin Balance: <span>$----</span></p>
+                            <div class="imgbx">
+                                <img style="width: 50px;" src="/img2/busd.png" alt="Bitcoin logo">
+                            </div>
+                        </div>
+                        <div class="lowcol">
+                            <div class="textbx">
+                                <p> Intrest: <span>$----</span></p>
+                                <p> Deposit: <span>$----</span></p>
+                            </div>
+                        <a href="../../dashboard/addfunds" class="addbtn">Add Funds</a>
+                        </div>
+
+                    </div>
+                </div>
+                    
 
                 </div>
                 <!-- /.container-fluid -->
